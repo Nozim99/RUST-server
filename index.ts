@@ -2,9 +2,7 @@ import express from "express"
 import doorLock from "./router/doorLock"
 import auth from "./router/auth"
 import mongoose from "mongoose"
-import * as dotenv from 'dotenv';
 
-dotenv.config()
 const app = express()
 mongoose.set("strictQuery", false)
 mongoose.connect("mongodb://localhost/rustify", { family: 4 })
