@@ -3,9 +3,12 @@ import doorLock from "./router/doorLock"
 import auth from "./router/auth"
 import mongoose from "mongoose"
 
+const mongoKey = process.env.mongoKey
+
 const app = express()
 mongoose.set("strictQuery", false)
-mongoose.connect("mongodb://localhost/rustify", { family: 4 })
+mongoose.connect(`mongodb+srv://mezes:${mongoKey}@cluster0.sbplsjm.mongodb.net/RUST?retryWrites=true&w=majority`, { family: 4 })
+// "mongodb://localhost/rustify"
 
 app.use(express.json())
 

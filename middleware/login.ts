@@ -4,6 +4,7 @@ import { Request, Response, NextFunction } from "express";
 
 const JWT_SECRET = process.env.JWT_KEY;
 
+
 export interface WidthUser extends Request {
   user?: { _id: mongoose.Types.ObjectId }
 }

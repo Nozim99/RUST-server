@@ -7,9 +7,11 @@ const express_1 = __importDefault(require("express"));
 const doorLock_1 = __importDefault(require("./router/doorLock"));
 const auth_1 = __importDefault(require("./router/auth"));
 const mongoose_1 = __importDefault(require("mongoose"));
+const mongoKey = process.env.mongoKey;
 const app = (0, express_1.default)();
 mongoose_1.default.set("strictQuery", false);
-mongoose_1.default.connect("mongodb://localhost/rustify", { family: 4 });
+mongoose_1.default.connect(`mongodb+srv://mezes:${mongoKey}@cluster0.sbplsjm.mongodb.net/RUST?retryWrites=true&w=majority`, { family: 4 });
+// "mongodb://localhost/rustify"
 app.use(express_1.default.json());
 try {
     app.use("/door-lock", doorLock_1.default);
