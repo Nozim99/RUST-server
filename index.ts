@@ -10,7 +10,6 @@ mongoose.set("strictQuery", false)
 mongoose.connect(`mongodb+srv://mezes:${mongoKey}@cluster0.sbplsjm.mongodb.net/RUST?retryWrites=true&w=majority`, { family: 4 })
 // "mongodb://localhost/rustify"
 
-
 app.use(express.json())
 
 try {
